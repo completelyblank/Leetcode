@@ -1,0 +1,17 @@
+class Solution 
+{
+    public:
+        string convertToTitle(int columnNumber) 
+        {
+            string result="";
+            while (columnNumber > 0) 
+            {
+                columnNumber--; 
+                char ch = 'A' + columnNumber % 26; //to get last char
+                result = ch + result;
+                columnNumber /= 26; //to get first char if it exists //AB case
+            }
+        
+        return result;
+        }
+};
