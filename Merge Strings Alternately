@@ -1,0 +1,23 @@
+class Solution 
+{
+    public:
+        string mergeAlternately(string word1, string word2) 
+        {
+            string result="";
+            int minimum=min(word1.length(), word2.length());
+            for (int i=0; i<minimum; i++)
+            {
+                result+=word1[i];
+                result+=word2[i];
+            }
+            if (word1.length()>minimum)
+            {
+                result+=word1.substr(minimum); //will append the characters from the minimum to the end of word1
+            }
+            else if (word2.length()>minimum)
+            {
+                result+=word2.substr(minimum); //will append the characters from the minimum to the end of word2
+            }
+            return result;
+        }
+};
